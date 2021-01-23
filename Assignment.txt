@@ -1,0 +1,514 @@
+package asgn1;
+
+import java.util.Scanner;
+
+public class Armstrong {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int num = sc.nextInt();
+		int rem=0,temp;
+		int tem = num;
+		while(num!=0) {
+			temp = num%10;
+			rem = rem + temp*temp*temp;
+			num/=10;
+		}
+		if(tem==rem)
+			System.out.println("Armstromg");
+		else
+			System.out.println("Not an Armstromg");
+		sc.close();
+	}
+
+}
+
+----------------------------------------------------------------------
+
+package asgn1;
+
+import java.util.Scanner;
+
+public class ArmstrongRange {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter lower number: ");
+		int low = sc.nextInt();
+		System.out.println("Enter higher number: ");
+		int high = sc.nextInt();
+		int num,temp2,rem;
+		while(low<=high) {
+			num=low;
+			rem=0;
+			while(num!=0) {
+				temp2 = num%10;
+				rem = rem + temp2*temp2*temp2;
+				num/=10;
+			}
+			if(low==rem)
+				System.out.println(low+" ");
+			low++;
+		}
+	}
+
+}
+
+---------------------------------------------------
+package asgn1;
+
+
+import java.util.Scanner;
+
+public class Factorial {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a Number :");
+		int num = sc.nextInt();
+		int res = 1;
+		while(num>1) {
+			res = num*res;
+			num--;
+		}
+		System.out.println("Factorial is: "+res);
+	}
+}
+-----------------------------------------------------------
+package asgn1;
+
+import java.util.Scanner;
+
+public class FactorialRec {
+
+	public static int factorial(int num) {
+		if(num == 1)
+			return num;
+		num = num*factorial(num-1);
+		return num;
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a Number :");
+		int num = sc.nextInt();
+		System.out.println("Factorial of "+num+" is: "+factorial(num));
+		sc.close();
+	}
+
+}
+
+---------------------------------------------------------
+package asgn1;
+
+import java.util.Scanner;
+
+public class Fibonacci {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int num = sc.nextInt();
+		int i = 0,j = 1;
+		int res = 0;
+		int count = 0;
+		while(num > count) {
+			System.out.println(i+" ");
+			res = i + j;
+			i = j;
+			j = res;
+			count++;
+		}
+		sc.close();
+	}
+}
+--------------------------------------------------------------
+package asgn1;
+
+import java.util.Scanner;
+
+public class FibonacciLimit {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the number: ");
+		int num = sc.nextInt();
+		int a=0,b=1,c;
+		while(a<num) {
+			System.out.println(a+" ");
+			c=a+b;
+			a=b;
+			b=c;
+		}
+		sc.close();
+	}
+}
+-----------------------------------------------------------
+package asgn1;
+
+import java.util.Scanner;
+
+public class LargestNum {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Array length: ");
+		int len = sc.nextInt();
+		int arr[] = new int[len];
+		for(int i=0;i<len;i++) {
+			arr[i] = sc.nextInt();
+		}
+		int a = arr[0];
+		for(int i=1;i<len;i++) {
+			if(arr[i]>a)
+				a=arr[i];
+		}
+		System.out.println("Greatest among the above is: "+a);
+		sc.close();
+
+	}
+
+}
+--------------------------------------------------------------
+package asgn1;
+
+import java.util.Scanner;
+
+public class Palindrome {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String str = sc.next();
+		int len = str.length();
+		for(int i=0;i<len/2;i++) {
+			if(str.charAt(i)!=str.charAt(len-i-1)){
+				System.out.println("Not a palindrome");
+				sc.close();
+				return;
+			}	
+		}
+		System.out.println("Palindrome");
+		sc.close();
+	}
+
+}
+
+-------------------------------------------------
+
+package asgn1;
+
+import java.util.Scanner;
+
+public class PositiveNegative {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a Number: ");
+		int num = sc.nextInt();
+		if(num<0)
+			System.out.println(num+" is negative");
+		else
+			System.out.println(num+" is positive");
+	}
+
+}
+-----------------------------------------------------
+package asgn1;
+
+import java.util.Scanner;
+
+public class PrimeNumber {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int num;
+		do{
+			System.out.println("\nEnter the number: ");
+			int i, count=0;
+			num = sc.nextInt();
+			if(num == 2) {
+				System.out.println(+num+" is a prime number!!!");
+				continue;
+			}
+			if(num%2 == 0 || num ==1)
+				System.out.println(num+" is not a prime number!!!");
+			else {
+				for(i=1;i<num/2;i+=2) {
+					if(num%i == 0)
+						count++;
+					if(count>1) {
+						System.out.println(+num+" is not a prime number!!!");
+						break;
+					}
+				}
+				if(count<=1)
+					System.out.println(+num+" is a prime number!!!");
+			}
+		}while(num!=0);
+		
+	}
+
+}
+----------------------------------------------------------------------------
+package asgn1;
+
+import java.util.Scanner;
+
+public class ReverseTheNumber {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the  number: ");
+		int num = sc.nextInt();
+		int rev = 0,temp;
+		while(num!=0){
+			temp= num%10;
+			rev=rev*10 + temp;
+			num=num/10;
+		}
+		System.out.println("Reversed number is: "+rev);
+		sc.close();
+	}
+
+}
+----------------------------------------------------------------
+package asgn1;
+
+import java.util.Scanner;
+
+public class Swap {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a and b: ");
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		int c;
+		c = a;
+		a = b;
+		b = a;
+		System.out.println("a: "+a+"\nb: "+b);
+		sc.close();
+	}
+
+}
+------------------------------------------------------------------
+package asgn1;
+
+import java.util.Scanner;
+
+public class SwapWithoutTemp {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a and b: ");
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		a = a + b;
+		b = a - b;
+		a = a - b;
+		System.out.println("a: "+a+"\nb: "+b);
+		sc.close();
+	}
+
+}
+--------------------------------------------------------------
+package asgn1;
+
+public class UpperCase_AtoZ {
+
+	public static void main(String[] args) {
+		char c = 'A';
+		while(c <= 'Z'){
+			System.out.println(c+" ");
+			c++;
+		}
+	}
+}
+--------------------------------------------------------------
+package asgn1;
+
+import java.util.Scanner;
+
+public class Vowel {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int c = sc.next().charAt(0);
+		if(c == 'a' || c == 'i' || c == 'o' || c == 'u' || c == 'e'
+				|| c == 'A' || c == 'I' || c == 'O' || c == 'U' || c == 'E')
+			System.out.println("Vowel");
+		else
+			System.out.println("Consonant");
+		sc.close();
+	}
+
+}
+-------------------------------------------------------------------------
+package asgn1;
+
+
+public class Prime {
+
+    public static void main(String[] args) {
+
+        int low = 20, high = 50;
+
+        while (low < high) {
+            boolean flag = false;
+
+            for(int i = 2; i <= low/2; ++i) {
+                // condition for nonprime number
+                if(low % i == 0) {
+                    flag = true;
+                    break;
+                }
+            }
+
+            if (!flag && low != 0 && low != 1)
+                System.out.print(low + " ");
+
+            ++low;
+        }
+    }
+}
+-----------------------------------------------------
+package asgn1;
+
+public class OctalToDecimalExample3{  
+  
+public static int getDecimal(int octal){    
+      
+    int decimal = 0;    
+      
+    int n = 0;    
+    
+    while(true){    
+      if(octal == 0){    
+        break;    
+      } else {    
+          int temp = octal%10;    
+          decimal += temp*Math.pow(8, n);    
+          octal = octal/10;    
+          n++;    
+       }    
+    }    
+    return decimal;    
+}    
+public static void main(String args[]){      
+
+System.out.println("Decimal of 121 octal is: "+getDecimal(121));    
+System.out.println("Decimal of 23 octal is: "+getDecimal(23));    
+System.out.println("Decimal of 10 octal is: "+getDecimal(10));    
+}}
+--------------------------------------------------------------------class DecimalBinaryExample{
+ package asgn1;
+
+  public void convertBinary(int num){
+     int binary[] = new int[40];
+     int index = 0;
+     while(num > 0){
+       binary[index++] = num%2;
+       num = num/2;
+     }
+     for(int i = index-1;i >= 0;i--){
+       System.out.print(binary[i]);
+     }
+  }
+ 
+  public static void main(String a[]){
+     DecimalBinaryExample obj = new DecimalBinaryExample();
+     System.out.println("Binary representation of 124: ");
+     obj.convertBinary(124);
+     System.out.println("\nBinary representation of 45: ");
+     obj.convertBinary(45);
+     System.out.println("\nBinary representation of 999: ");
+     obj.convertBinary(999);
+  }
+}
+-----------------------------------------------------------------
+ package asgn1;
+class FactorialExample2{  
+ static int factorial(int n){    
+  if (n == 0)    
+    return 1;    
+  else    
+    return(n * factorial(n-1));    
+ }    
+ public static void main(String args[]){  
+  int i,fact=1;  
+  int number=4;//It is the number to calculate factorial    
+  fact = factorial(number);   
+  System.out.println("Factorial of "+number+" is: "+fact);    
+ }  
+}
+-------------------------------------------------
+package asgn1;
+public class BinaryOctal {
+
+    public static void main(String[] args) {
+        long binary = 101001;
+        int octal = convertBinarytoOctal(binary);
+        System.out.printf("%d in binary = %d in octal", binary, octal);
+    }
+
+    public static int convertBinarytoOctal(long binaryNumber)
+    {
+        int octalNumber = 0, decimalNumber = 0, i = 0;
+
+        while(binaryNumber != 0)
+        {
+            decimalNumber += (binaryNumber % 10) * Math.pow(2, i);
+            ++i;
+            binaryNumber /= 10;
+        }
+
+        i = 1;
+
+        while (decimalNumber != 0)
+        {
+            octalNumber += (decimalNumber % 8) * i;
+            decimalNumber /= 8;
+            i *= 10;
+        }
+
+        return octalNumber;
+    }
+}
+---------------------------------------------------
+package asgn1;
+
+public class Reverse {
+
+  public static void main(String[] args) {
+    String sentence = "Go work";
+    String reversed = reverse(sentence);
+    System.out.println("The reversed sentence is: " + reversed);
+  }
+
+  public static String reverse(String sentence) {
+    if (sentence.isEmpty())
+      return sentence;
+
+    return reverse(sentence.substring(1)) + sentence.charAt(0);
+  }
+}
+------------------------------------------------------
+package asgn1;
+
+
+public class Power {
+
+    public static void main(String[] args) {
+        int base = 3, powerRaised = 4;
+        int result = power(base, powerRaised);
+
+        System.out.printf("%d^%d = %d", base, powerRaised, result);
+    }
+
+    public static int power(int base, int powerRaised) {
+        if (powerRaised != 0)
+            return (base * power(base, powerRaised - 1));
+        else
+            return 1;
+    }
+}
